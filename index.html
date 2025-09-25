@@ -4,60 +4,91 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Oyez — Trustworthy AI Tools</title>
+<meta name="description" content="The Oyez builds practical tools for trustworthy AI — evaluations, provenance, and reproducibility.">
+<link rel="icon" href="/favicon.ico">
+<meta property="og:title" content="The Oyez — Trustworthy AI Tools">
+<meta property="og:description" content="Practical tools for trustworthy AI — evaluations, provenance, and reproducibility.">
+<meta property="og:url" content="https://theoyez.org/">
+<meta name="twitter:card" content="summary">
 <style>
   :root { --bg:#0b0c10; --fg:#e8edf2; --muted:#a9b3be; --card:#12141a; --line:#1f2430; --accent:#6ee7ff; }
   *{box-sizing:border-box}
   body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
-  .wrap{max-width:1000px;margin:0 auto;padding:28px}
-  .hero h1{margin:0 0 8px;font-size:36px}
+  a{color:var(--accent);text-decoration:none}
+  header{border-bottom:1px solid var(--line);background:#0c0e13}
+  .nav{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 20px;}
+  .brand{font-weight:700;font-size:18px}
+  .nav a{margin-left:14px}
+  .wrap{max-width:1000px;margin:0 auto;padding:28px 20px}
+  .hero h1{margin:0 0 10px;font-size:38px}
   .muted{color:var(--muted)}
-  .btn{display:inline-block;padding:10px 14px;border:1px solid var(--line);border-radius:10px;color:var(--fg);text-decoration:none}
+  .btn{display:inline-block;padding:10px 14px;border:1px solid var(--line);border-radius:10px;color:var(--fg)}
   .btn:hover{background:#151a22}
   .grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin-top:18px}
   .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
-  h3{margin:0 0 10px}
-  a{color:var(--accent)}
-  ul{margin:8px 0 0 18px}
-  footer{margin-top:28px;color:#7e8a96}
+  h2{margin:20px 0 8px}
+  footer{margin-top:28px;border-top:1px solid var(--line);color:#7e8a96;padding:18px 20px}
+  .small{font-size:13px}
 </style>
 </head>
 <body>
+
+<header>
+  <div class="nav">
+    <div class="brand">The Oyez</div>
+    <nav>
+      <a href="/trusteval-mini/">Leaderboard</a>
+      <a href="https://github.com/theoyez/trusteval-mini/blob/main/CONTRIBUTING.md">How to submit</a>
+      <a href="/faq.html">FAQ</a>
+      <a href="mailto:contact@theoyez.org">Contact</a>
+    </nav>
+  </div>
+</header>
+
 <div class="wrap">
-  <div class="hero">
-    <h1>The Oyez</h1>
-    <p class="muted">Practical tools for <b>trustworthy AI</b> — evaluations, provenance, and reproducibility.</p>
+  <section class="hero">
+    <h1>Tools for <b>trustworthy AI</b></h1>
+    <p class="muted">Evaluations, provenance, and reproducibility — starting with a small, auditable RAG benchmark.</p>
     <p>
       <a class="btn" href="/trusteval-mini/">Open TrustEval-Mini Leaderboard</a>
       <a class="btn" href="https://github.com/theoyez/trusteval-mini/blob/main/CONTRIBUTING.md">How to submit</a>
     </p>
-  </div>
+  </section>
 
   <div class="grid">
     <div class="card">
-      <h3>What is TrustEval-Mini?</h3>
-      <p>A small, auditable RAG evaluation that checks faithfulness and attribution on a fixed manifest of sources and questions.</p>
+      <h2>What is TrustEval-Mini?</h2>
+      <p>A compact RAG evaluation for faithfulness + attribution on a fixed manifest of sources/questions.</p>
       <p><a href="/trusteval-mini/">Leaderboard</a> · <a href="https://github.com/theoyez/trusteval-mini">GitHub</a> · <a href="https://github.com/theoyez/trusteval-mini/blob/main/CONTRIBUTING.md">Submission guide</a></p>
     </div>
 
     <div class="card">
-      <h3>Provenance Modes</h3>
+      <h2>Provenance modes</h2>
       <ul>
-        <li><b>DERIVED</b> — quickest start. Uses published manifest + hash.</li>
-        <li><b>STRICT</b> — cryptographically verified. We sign the manifest; the evaluator verifies with our public key. Reports include <code>signature_verified: true</code> when authentic.</li>
+        <li><b>DERIVED</b> — Quick start. Uses the published manifest + hash.</li>
+        <li><b>STRICT</b> — Cryptographically verified. We sign the manifest; evaluator verifies with our public key.
+          Reports include <code>signature_verified: true</code> when authentic.</li>
       </ul>
     </div>
 
     <div class="card">
-      <h3>How scoring gets on the board</h3>
-      <p>Run locally → produce <code>report.json</code>/<code>report.html</code> → add one row to <code>scores.csv</code> → open a Pull Request. Our checks confirm your row matches your report before merge.</p>
+      <h2>How scores get on the board</h2>
+      <p>Run locally → produce <code>report.json</code>/<code>report.html</code> → add one line to <code>scores.csv</code> → open a Pull Request. CI verifies the numbers match your report before merge.</p>
     </div>
 
     <div class="card">
-      <h3>More tools (coming)</h3>
-      <p>We’ll add utilities for red-teaming, data lineage, and reproducible runs. Want to collaborate?</p>
-      <p><a href="mailto:research@theoyez.org">research@theoyez.org</a></p>
+      <h2>What’s next</h2>
+      <p>More utilities for data lineage, red-teaming, and reproducible runs. Collaborations welcome.</p>
+      <p><a href="mailto:contact@theoyez.org">contact@theoyez.org</a></p>
     </div>
   </div>
+</div>
 
-  <footer>© The Oyez</footer>
-<
+<footer>
+  <div class="small">© The Oyez • <a href="/faq.html">FAQ</a> • <a href="mailto:contact@theoyez.org">contact@theoyez.org</a></div>
+</footer>
+
+<!-- Plausible (privacy-friendly analytics) — optional: replace example domain -->
+<!-- <script defer data-domain="theoyez.org" src="https://plausible.io/js/script.js"></script> -->
+</body>
+</html>
