@@ -1,0 +1,31 @@
+<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FAQ — The Oyez</title>
+<style>
+  body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;margin:0;background:#0b0c10;color:#e8edf2}
+  .wrap{max-width:900px;margin:0 auto;padding:28px 20px}
+  a{color:#6ee7ff}
+  h1{margin:0 0 10px}
+  .q{font-weight:700;margin-top:18px}
+  .muted{color:#a9b3be}
+</style>
+<div class="wrap">
+  <h1>FAQ</h1>
+  <p class="muted">Short answers to common questions.</p>
+
+  <div class="q">Why do submissions go through GitHub, not a web form?</div>
+  <p>It gives an audit trail. Every score is a PR with <code>report.json</code>/<code>report.html</code> attached; CI verifies numbers match. That keeps the board credible.</p>
+
+  <div class="q">What’s the difference between DERIVED and STRICT?</div>
+  <p><b>DERIVED</b> uses the published manifest + hash (easier). <b>STRICT</b> additionally verifies a cryptographic signature we publish; reports include <code>signature_verified: true</code> when authentic.</p>
+
+  <div class="q">Do you host my data or model?</div>
+  <p>No. You run locally and submit only the reports + one CSV line.</p>
+
+  <div class="q">I’m new to GitHub. How do I submit?</div>
+  <p>Follow the copy-paste steps in the <a href="https://github.com/theoyez/trusteval-mini/blob/main/CONTRIBUTING.md">Submission guide</a>. It’s fork → run → add files → open PR.</p>
+
+  <div class="q">Where can I ask questions or collaborate?</div>
+  <p>Email <a href="mailto:contact@theoyez.org">contact@theoyez.org</a>.</p>
+
+  <p><a href="/">← Back to home</a></p>
+</div>
